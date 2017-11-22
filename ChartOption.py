@@ -44,9 +44,10 @@ class ChartOption():
         plt.figure(figsize=(13, 5))
         plt.subplots_adjust(left=0.3)
         rax = plt.axes([0.05, 0.4, 0.2, 0.25])
-        for expire in self.expire_range:
-            self.button_text.append(expire)
-            self.button_visible.append(True)
+        for result in self.results:
+            if result is not None:
+                self.button_text.append(result["expire"])
+                self.button_visible.append(True)
 
         self.check = CheckButtons(rax, self.button_text, self.button_visible)
         self.check.on_clicked(self.func)
@@ -75,6 +76,6 @@ class ChartOption():
                 self.line_plots.append({"expire":result["expire"], "line":line[0]})
                 plt.legend(loc='upper left', frameon=False)
 
-            color_base += self.color_delta
+                color_base += self.color_delta
 
         plt.show()

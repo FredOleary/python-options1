@@ -17,7 +17,7 @@ PARSER = argparse.ArgumentParser()
 PARSER.add_argument("-t", "--ticker", help="Ticker to chart, (MSFT, AAPL..., Default=AAPL)", dest="ticker", default="AAPL")
 ARGS = PARSER.parse_args()
 
-chart1 = chart.ChartOption( ARGS.ticker, ["2017-11-24", "2017-12-01", "2017-12-08", "2017-12-15", "2017-12-22"])
+chart1 = chart.ChartOption( ARGS.ticker, ["2017-12-01", "2017-12-08", "2017-12-16", "2017-12-22"])
 print(ARGS.ticker)
 chart1.get_option_prices()
 
